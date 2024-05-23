@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProdActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="menu_item_1">Menu 1</string>
+    <string name="menu_item_2">Menu 2</string>
+    <string name="menu_item_3">Menu 3</string>
+    <string name="menu_item_4">Menu 4</string>
+    <string name="activity_1">Activity 1</string>
+    <string name="activity_2">Activity 2</string>
+    <string name="second_screen_text">Test on second screen</string>
+    <string name="third_screen_text">Test on third screen\nasdf\nasdf</string>
+    <string name="fourth_screen_text">Test on fourth screen</string>
+</resources>
