@@ -63,7 +63,7 @@ fun ProdActivityApp (
             composable(route = ProdActivityScreen.NoisesScreen.name) {
                 val context = LocalContext.current
                 NoisesScreen(
-                    options = DataSource.activities.map { id -> context.resources.getString(id) },
+                    options = DataSource.noises,
                     onSelectionChanged = { viewModel.setActivityName(it) },
                     modifier = Modifier.fillMaxHeight()
                 )
