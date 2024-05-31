@@ -34,7 +34,6 @@ import com.example.prodactivity.ui.NoisesScreen
 import com.example.prodactivity.ui.MainViewModel
 import com.example.prodactivity.ui.StatsScreen
 
-
 enum class ProdActivityScreen(@StringRes val title: Int) {
     NoisesScreen(title = R.string.menu_item_1),
     GoalsScreen(title = R.string.menu_item_2),
@@ -64,8 +63,7 @@ fun ProdActivityApp (
                 val context = LocalContext.current
                 NoisesScreen(
                     options = DataSource.noises,
-                    onSelectionChanged = { viewModel.setActivityName(it) },
-                    modifier = Modifier.fillMaxHeight()
+                    modifier = Modifier.fillMaxHeight(),
                 )
             }
             composable(route = ProdActivityScreen.GoalsScreen.name) {

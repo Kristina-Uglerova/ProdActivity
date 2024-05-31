@@ -6,15 +6,14 @@ import android.media.MediaPlayer
 data class NoiseItem(
     val nameResId: Int,
     val soundResId: Int,
+    val infoResId: Int,
     var isPlaying: Boolean = false,
     var mediaPlayer: MediaPlayer? = null
 ) {
-    fun initializeMediaPlayer(context: Context) {
-        mediaPlayer = MediaPlayer.create(context, soundResId)
-    }
+
     fun playPause(context: Context) {
         if (mediaPlayer == null) {
-            initializeMediaPlayer(context)
+            mediaPlayer = MediaPlayer.create(context, soundResId)
             mediaPlayer!!.isLooping = true
         }
         if (mediaPlayer!!.isPlaying) {
