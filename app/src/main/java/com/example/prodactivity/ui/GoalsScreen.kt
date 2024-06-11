@@ -271,12 +271,12 @@ fun GoalEditDialog(
 
                 }
             ) {
-                R.string.ok_button
+                Text(text = stringResource(id = R.string.ok_button))
             }
         },
         dismissButton = {
             Button(onClick = { onCloseDialog() }) {
-                R.string.cancel_button
+                Text(text = stringResource(id = R.string.cancel_button))
             }
         },
         text = {

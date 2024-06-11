@@ -35,11 +35,16 @@ class StatsViewModel(private val goalsRepository: GoalsRepository) : ViewModel()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(TIMEOUT_MILLIS), 0)
 
     val finishedGoalsPercentage: StateFlow<Float> = goalsCount.map { total ->
-        if (total > 0) {
-            ((finishedGoalsCount.value?.toFloat() ?: 0f) / total) * 100
-        } else {
+        try {
+            if (total > 0) {
+                ((finishedGoalsCount.value?.toFloat() ?: 0f) / total) * 100
+            } else {
+                0f
+            }
+        } catch (e: NullPointerException) {
             0f
         }
+
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(TIMEOUT_MILLIS), 0f)
 
     fun calculateGoalWidth(goalStreak: Int): Float {
