@@ -1,6 +1,7 @@
-package com.example.prodactivity
+package com.example.prodactivity.ui
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,8 +9,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
@@ -18,7 +17,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -27,43 +25,43 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.prodactivity.data.DataSource
-import com.example.prodactivity.ui.TimersScreen
-import com.example.prodactivity.ui.GoalsScreen
-import com.example.prodactivity.ui.NoisesScreen
-import com.example.prodactivity.ui.MainViewModel
-import com.example.prodactivity.ui.StatsScreen
+import com.example.prodactivity.viewModel.NoiseViewModel
+import com.example.prodactivity.R
+import com.example.prodactivity.viewModel.MainViewModel
+import com.example.prodactivity.viewModel.TimerViewModel
+import com.example.prodactivity.ui.theme.myLightPink
 
 enum class ProdActivityScreen(@StringRes val title: Int) {
     NoisesScreen(title = R.string.menu_item_1),
     GoalsScreen(title = R.string.menu_item_2),
     StatsScreen(title = R.string.menu_item_3),
-    TimersScreen(title = R.string.menu_item_4)
+    TimerScreen(title = R.string.menu_item_4)
 }
 
 @Composable
 fun ProdActivityApp (
     viewModel: MainViewModel = viewModel(),
+    noiseViewModel: NoiseViewModel = viewModel(),
+    timerViewModel: TimerViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
     Scaffold (
-
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState()
-
         NavHost(
             navController = navController,
             startDestination = ProdActivityScreen.NoisesScreen.name,
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(rememberScrollState())
                 .padding(innerPadding)
         ) {
             composable(route = ProdActivityScreen.NoisesScreen.name) {
-                val context = LocalContext.current
                 NoisesScreen(
-                    options = DataSource.noises,
-                    modifier = Modifier.fillMaxHeight(),
+                    options = noiseViewModel.noises,
+                    onItemClick = {
+                        noiseViewModel.updateNoiseItem(it.copy(isPlaying = !it.isPlaying))
+                    },
+                    modifier = Modifier.fillMaxHeight()
                 )
             }
             composable(route = ProdActivityScreen.GoalsScreen.name) {
@@ -76,9 +74,10 @@ fun ProdActivityApp (
                     modifier = Modifier.fillMaxHeight()
                 )
             }
-            composable(route = ProdActivityScreen.TimersScreen.name) {
-                TimersScreen(
-                    modifier = Modifier.fillMaxHeight()
+            composable(route = ProdActivityScreen.TimerScreen.name) {
+                TimerScreen(
+                    modifier = Modifier.fillMaxHeight(),
+                    timerViewModel
                 )
             }
         }
@@ -90,7 +89,8 @@ fun ProdActivityApp (
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(dimensionResource(R.dimen.padding_medium)),
+                    .padding(dimensionResource(R.dimen.padding_medium))
+                    .background(myLightPink),
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
                 verticalAlignment = Alignment.Bottom
             ) {
@@ -123,7 +123,7 @@ fun ProdActivityApp (
                 }
                 IconButton(
                     modifier = Modifier.weight(1f),
-                    onClick = { navController.navigate(ProdActivityScreen.TimersScreen.name) }
+                    onClick = { navController.navigate(ProdActivityScreen.TimerScreen.name) }
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.timers_icon),

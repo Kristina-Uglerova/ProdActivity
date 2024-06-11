@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "quotes">
+        <item>Your direction is more important than your speed</item>
+        <item>The future depends on what you do today</item>
+        <item>Focus on step infront of you, not the whole staircase</item>
+        <item>Be the person you would look up to</item>
+        <item>A little progress each day adds up to big results</item>
+        <item>Don’t wish for it, work for it</item>
+        <item>There is no “right time”, there is just time and what you choose to do with it</item>
+        <item>Remember why you started</item>
+        <item>You are what you do, not what you say you’ll do</item>
+        <item>You don’t have to be extreme, just consistent</item>
+        <item>Remember that once you dreamed of being where you are now</item>
+        <item>If not now than when</item>
+        <item>Success is 1% plan, 99% action</item>
+        <item>Be the best version of you</item>
+        <item>Don’t stop until you’re proud</item>
+        <item>Imagine where you would be next year if you start now</item>
+        <item>Good things come to those who work for it</item>
+        <item>You got two choices: 1. do it now 2. regret it later</item>
+        <item>Don’t let your fear decide your future</item>
+        <item>Imagine what’s possible once you stop doubting yourself</item>
+        </string-array>
+</resources>

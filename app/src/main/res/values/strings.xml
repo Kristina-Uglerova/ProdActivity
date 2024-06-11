@@ -9,6 +9,9 @@
     <string name="info_icon">info</string>
     <string name="pause_icon">pause</string>
     <string name="add_icon">add</string>
+    <string name="settings_icon">settings</string>
+    <string name="stop_icon">stop</string>
+    <string name="restart_icon">restart</string>
     <string name="streaks_icon">streak</string>
     <string name="more_icon">more</string>
     <string name="blue_noise">Blue noise</string>
@@ -25,8 +28,22 @@
     <string name="pink_noise_info">Zlepšuje sústredenie a produktivitu, redukuje rozptýlenie. Pripomína prirodzené zvuky ako dážd, vietor či vlny.</string>
     <string name="violet_noise_info">Vytvára pocit pokoja. Vodný na relax, meditáciu, zníženie stresu. Pomáha vyrovnávať a synchronizovať mozgové vlny.</string>
     <string name="white_noise_info">Pomáha pri nespavosti, znižuje príznaky ADHD, zvyšuje pracovnú pamäť. Dobrý pre blokovanie iných nepravidelných a nepredvídateľných okolitých zvukov.</string>
-    <string name="longterm_checkbox">Longterm</string>
-    <string name="second_screen_text">Test on second screen</string>
-    <string name="third_screen_text">Test on third screen\nasdf\nasdf</string>
-    <string name="fourth_screen_text">Test on fourth screen</string>
+    <string name="longterm_checkbox">Long-term</string>
+    <string name="enter_goal_name">Enter your goal name</string>
+    <string name="enter_goal_description">Enter your goal description</string>
+    <string name="ok_button">Ok</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="edit_button">Edit</string>
+    <string name="delete_button">Delete</string>
+    <string name="streak_button">I worked on this goal</string>
+    <string name="finish_goal_button">Finish goal</string>
+    <string name="top_goals_streaks">Your top goals streaks</string>
+    <string name="goals_in_process">Goals in process</string>
+    <string name="finished_goals_percentage">Finished goals %</string>
+    <string name="finished_goals">Finished goals</string>
+    <string name="top_streak_goal">Goal with top streak</string>
+    <string name="no_long_term_goals">You don\'t have any \n long-term goals yet!</string>
+    <string name="work_time">You don\'t have any \n long-term goals yet!</string>
+    <string name="pause_time">You don\'t have any \n long-term goals yet!</string>
+
 </resources>
