@@ -28,7 +28,7 @@ import com.example.prodactivity.R
 import com.example.prodactivity.viewModel.StatsViewModel
 import com.example.prodactivity.ui.theme.ProdActivityTheme
 import com.example.prodactivity.ui.theme.myDarkPink
-import com.example.prodactivity.viewModel.AppViewModelProvider
+import com.example.prodactivity.data.database.AppViewModelProvider
 
 @Composable
 fun StatsScreen(

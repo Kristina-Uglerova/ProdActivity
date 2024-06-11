@@ -32,6 +32,7 @@ import androidx.lifecycle.LiveData
 import com.example.prodactivity.R
 import com.example.prodactivity.data.Noise
 import com.example.prodactivity.ui.theme.ProdActivityTheme
+import com.example.prodactivity.viewModel.MediaController
 
 @Composable
 fun NoisesScreen(

@@ -32,7 +32,7 @@ import com.example.prodactivity.data.Timer
 import com.example.prodactivity.ui.theme.ProdActivityTheme
 import com.example.prodactivity.ui.theme.myDarkPink
 import com.example.prodactivity.ui.theme.myLightGreen
-import com.example.prodactivity.viewModel.AppViewModelProvider
+import com.example.prodactivity.data.database.AppViewModelProvider
 import com.example.prodactivity.viewModel.TimerViewModel
 import kotlin.math.roundToInt
 

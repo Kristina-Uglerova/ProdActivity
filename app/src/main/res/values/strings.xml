@@ -43,7 +43,8 @@
     <string name="finished_goals">Finished goals</string>
     <string name="top_streak_goal">Goal with top streak</string>
     <string name="no_long_term_goals">You don\'t have any \n long-term goals yet!</string>
-    <string name="work_time">You don\'t have any \n long-term goals yet!</string>
-    <string name="pause_time">You don\'t have any \n long-term goals yet!</string>
+    <string name="work_time">Work time</string>
+    <string name="pause_time">Pause time</string>
+    <string name="database_name">goal_database</string>
 
 </resources>

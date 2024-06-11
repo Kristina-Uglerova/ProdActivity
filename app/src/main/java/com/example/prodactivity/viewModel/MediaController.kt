@@ -1,4 +1,4 @@
-package com.example.prodactivity.ui
+package com.example.prodactivity.viewModel
 
 import android.content.Context
 import android.media.MediaPlayer

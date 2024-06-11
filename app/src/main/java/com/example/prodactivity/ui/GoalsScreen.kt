@@ -52,7 +52,7 @@ import com.example.prodactivity.data.Goal
 import com.example.prodactivity.ui.theme.ProdActivityTheme
 import com.example.prodactivity.ui.theme.myLightGreen
 import com.example.prodactivity.ui.theme.myDarkGreen
-import com.example.prodactivity.viewModel.AppViewModelProvider
+import com.example.prodactivity.data.database.AppViewModelProvider
 import com.example.prodactivity.viewModel.GoalsViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
